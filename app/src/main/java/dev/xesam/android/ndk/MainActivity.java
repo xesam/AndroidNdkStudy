@@ -1,9 +1,7 @@
 package dev.xesam.android.ndk;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
 import android.widget.Button;
 
 import butterknife.ButterKnife;
@@ -30,7 +28,5 @@ public class MainActivity extends Activity {
     @OnClick(R.id.getDeviceId)
     public void ndkGetDeviceId(Button btn) {
         btn.setText(NdkTools.getDeviceId(getApplicationContext()));
-        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        telephonyManager.getDeviceId();
     }
 }
