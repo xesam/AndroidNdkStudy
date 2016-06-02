@@ -7,4 +7,6 @@ import android.content.Context;
  */
 public class NdkTools {
     public static native String getPackageName(Context context);
+
+    public static native String getDeviceId(Context context);
 }

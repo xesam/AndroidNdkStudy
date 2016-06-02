@@ -15,6 +15,14 @@ extern "C" {
 JNIEXPORT jstring JNICALL Java_dev_xesam_android_ndk_NdkTools_getPackageName
   (JNIEnv *, jclass, jobject);
 
+/*
+ * Class:     dev_xesam_android_ndk_NdkTools
+ * Method:    getDeviceId
+ * Signature: (Landroid/content/Context;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_dev_xesam_android_ndk_NdkTools_getDeviceId
+  (JNIEnv *, jclass, jobject);
+
 #ifdef __cplusplus
 }
 #endif
