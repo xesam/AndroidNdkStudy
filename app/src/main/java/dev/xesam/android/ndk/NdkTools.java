@@ -9,4 +9,6 @@ public class NdkTools {
     public static native String getPackageName(Context context);
 
     public static native String getDeviceId(Context context);
+
+    public static native int getValue(int[] values, int index);
 }

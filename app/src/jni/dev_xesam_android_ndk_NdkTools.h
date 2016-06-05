@@ -23,6 +23,14 @@ JNIEXPORT jstring JNICALL Java_dev_xesam_android_ndk_NdkTools_getPackageName
 JNIEXPORT jstring JNICALL Java_dev_xesam_android_ndk_NdkTools_getDeviceId
   (JNIEnv *, jclass, jobject);
 
+/*
+ * Class:     dev_xesam_android_ndk_NdkTools
+ * Method:    getValue
+ * Signature: ([II)I
+ */
+JNIEXPORT jint JNICALL Java_dev_xesam_android_ndk_NdkTools_getValue
+  (JNIEnv *, jclass, jintArray, jint);
+
 #ifdef __cplusplus
 }
 #endif

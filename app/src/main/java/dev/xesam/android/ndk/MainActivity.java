@@ -13,6 +13,8 @@ public class MainActivity extends Activity {
         System.loadLibrary("ndk-tools");
     }
 
+    static int[] NUMBERS = {10, 32, 43, 56};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,4 +31,10 @@ public class MainActivity extends Activity {
     public void ndkGetDeviceId(Button btn) {
         btn.setText(NdkTools.getDeviceId(getApplicationContext()));
     }
+
+    @OnClick(R.id.getValue)
+    public void getValue(Button btn) {
+        btn.setText(NdkTools.getValue(NUMBERS, 2) + "");
+    }
+
 }

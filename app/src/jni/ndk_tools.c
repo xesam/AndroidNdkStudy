@@ -33,7 +33,7 @@ jstring Java_getPackageName(JNIEnv* env, jobject context){
 	}
 }
 
-jstring JNICALL Java_getDeviceId(JNIEnv* env, jobject context){
+jstring Java_getDeviceId(JNIEnv* env, jobject context){
     jclass context_class = (*env)->FindClass(env, "android/content/Context");
     jmethodID getSystemService = (*env)->GetMethodID(env, context_class, "getSystemService", "(Ljava/lang/String;)Ljava/lang/Object;");
     jfieldID STATIC_TELEPHONY_SERVICE = (*env)->GetStaticFieldID(env, context_class, "TELEPHONY_SERVICE", "Ljava/lang/String;");
@@ -44,4 +44,10 @@ jstring JNICALL Java_getDeviceId(JNIEnv* env, jobject context){
     jmethodID getDeviceId = (*env)->GetMethodID(env, telephony_manager_class, "getDeviceId", "()Ljava/lang/String;");
     jstring deviceId = (jstring)(*env)->CallObjectMethod(env, telephony_manager_instance, getDeviceId);
     return deviceId;
+}
+
+jint Java_getValue(JNIEnv* env, jintArray values, jint index){
+    jint j_copy[1];
+    (*env)->GetIntArrayRegion(env, values, index, 1, j_copy);
+    return j_copy[0];
 }

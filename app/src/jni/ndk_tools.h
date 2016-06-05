@@ -7,3 +7,5 @@
 jstring Java_getPackageName(JNIEnv *, jobject);
 
 jstring Java_getDeviceId(JNIEnv *, jobject);
+
+jint Java_getValue(JNIEnv *, jintArray, jint);
